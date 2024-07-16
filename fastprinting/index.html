@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="shortcut icon" href="./assets/descarga.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./main.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Printing</title>
+ </head>
+ <body>
+  <p class="text">
+   One-Of-A-Kind Fast Luxury Printing + Endless Possibilities + High-End
+   Customer Service
+  </p>
+  <h1 id="brand">FAST PRINTING<span>®</span></h1>
+  <div class="fast">
+   <img src="" alt="" />
+  </div>
+  <div class="filter">
+   <select id="sellerFilter">
+    <option value="">Select Seller</option>
+   </select>
+   <input type="number" id="priceFilter" placeholder="Enter price" />
+   <button id="searchButton">Search</button>
+   <button id="clearFilters">Clear Filters</button>
+  </div>
+  <div class="products" id="productsList"></div>
+  <div id="noProductsMessage" style="display: none">
+   <p>No products found</p>
+   <div id="suggestedProducts" class="products"></div>
+  </div>
+ </body>
+</html>
