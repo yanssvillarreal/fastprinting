@@ -1,0 +1,67 @@
+body {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ margin: 0;
+ padding: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.text {
+ background-color: #db1970;
+ color: #fff;
+ width: 100%;
+ padding: 10px;
+ margin-top: auto;
+ margin-bottom: auto;
+ text-align: center;
+ font-size: 12px;
+ font-weight: bold;
+}
+
+#brand {
+ color: #db1970;
+ font-size: 2em;
+}
+
+span {
+ font-size: 10px;
+}
+.filter {
+ margin: 20px;
+ display: flex;
+ gap: 10px;
+}
+
+.products {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 20px;
+ margin: 20px;
+}
+
+/* #app {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 20px;
+ margin: 20px;
+} */
+
+.product {
+ border: 1px solid #db1970;
+ padding: 20px;
+ text-align: center;
+ width: 200px;
+ box-shadow: 0 0 10px rgba(222, 194, 13, 0.493);
+ transition: box-shadow 0.3s ease;
+}
+
+.product:hover {
+ box-shadow: 0 0 15px #db197052;
+}
+
+.product img {
+ max-width: 100%;
+ height: auto;
+}
