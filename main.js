@@ -268,7 +268,7 @@ generateSellerOptions()
 displayProducts(products)
 
 //!Funcion caret-down
-document.getElementById('caret-down').addEventListener('click', () => {
+document.getElementById('caret-down').addEventListener('mouseover', () => {
  const menu = document.getElementById('menu')
  menu.style.display = menu.style.display === 'block' ? 'none' : 'block'
 })
@@ -325,6 +325,16 @@ document.addEventListener('DOMContentLoaded', () => {
   navContainer.style.display =
    navContainer.style.display === 'block' ? 'none' : 'block'
  })
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+ var img = document.createElement('img')
+ img.src = './assets/Captura de pantalla 2024-08-03 151738.png'
+ img.alt = 'banner'
+
+ img.classList.add('dynamic-image')
+ var imageContainer = document.getElementById('image-container')
+ imageContainer.appendChild(img)
 })
 
 //!Footer dinamico
