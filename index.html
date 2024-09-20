@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="./style.css" />
   <script src="./main.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="autor" content="yancy">
-  <meta name="theme-color" content="fucsia">
-  <meta name="descripction" content="custom printing services">
+  <meta name="autor" content="yancy" />
+  <meta name="theme-color" content="fucsia" />
+  <meta name="descripction" content="custom printing services" />
   <title>Fast Printing</title>
   <link
    rel="stylesheet"
@@ -25,7 +25,9 @@
   <div class="container">
    <div id="nav-container"></div>
    <section class="filter">
-    <button id="caret-down"><i class="fa-solid fa-caret-down"></i></button>
+    <button id="caret-down">
+     FILTER <i class="fa-solid fa-caret-down"></i>
+    </button>
     <div id="menu">
      <select id="sellerFilter">
       <option value="">Select Seller</option>
@@ -40,13 +42,16 @@
     </div>
    </section>
   </div>
-  <div id="image-container"></div> 
-  <article>
-  <div class="products" id="productsList"></div>
+  <div id="image-container"></div>
   <div id="noProductsMessage">
    <p>¡Products not found!</p>
-   <div class="products" id="suggestedProducts"></div>
-   </article>
-   <footer id="footer-container"></footer>
+  </div>
+  <article>
+   <div class="products" id="productsList"></div>
+   <div id="suggestedProducts">
+    <p>Suggested Products</p>
+   </div>
+  </article>
+  <footer id="footer-container"></footer>
  </body>
 </html>

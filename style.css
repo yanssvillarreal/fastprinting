@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Cantarell', sans-serif;
+}
+
 :root {
  /* FONT COLORS */
  --primary-color-fp: #db1970;
@@ -6,110 +15,124 @@
  --quaternary-color-fp: #0000007f;
  --quinary-color-fp: black;
 
+ /*FONT SIZE*/
+ --font-size-fp-s: 12px;
+ --font-size-fp-m: 14px;
+ --font-size-fp-l: 16px;
+ --font-size-fp-xl: 24px;
+ --font-size-fp-xxl: 30px;
+
  /* BACKGROUND COLORS */
  --background-color-1-fp: #fff;
  --background-color-2-fp: #0000007f;
  --background-color-3-fp: #ecececbb;
+
+ /* SPACINGS */
+ --padding-fp-s: 0px;
+ --padding-fp-m: 10px;
+ --padding-fp-l: 15px;
+ --padding-fp-xl: 20px;
+ --padding-fp-xl: 30px;
+ --padding-fp-xxl: 50px;
+
+ --gap-fp-s: 10px;
+ --gap-fp-m: 15px;
+ --gap-fp-l: 20px;
+ --gap-fp-xl: 30px;
+ --gap-fp-xxl: 60px;
 }
 
 body {
- font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- margin: 0;
- padding: 0;
+ background-color: var(--background-color-1-fp);
+ min-height: 100svh;
 }
 
 .text {
  background-color: var(--primary-color-fp);
  color: var(--secondary-color-fp);
- width: 100;
- padding: 12px;
+ padding: var(--padding-fp-m);
  margin-top: auto;
  text-align: center;
- font-size: 12px;
+ font-size: var(--font-size-fp-m);
  font-weight: bold;
 }
 
 #brand {
  display: flex;
  color: var(--primary-color-fp);
- font-size: 30px;
- padding-top: 12px;
- padding-left: 7%;
+ font-size: var(--font-size-fp-xxl);
+ padding: var(--padding-fp-xl);
 }
 
 span {
- font-size: 15px;
+ font-size: var(--font-size-fp-l);
 }
 
 .container {
  display: flex;
  align-items: center;
  justify-content: center;
- gap: 30px;
+ gap: var(--gap-fp-xl);
 }
 
 .dynamic-image {
  display: block;
- margin: 0 auto;
  max-width: 100%;
- height: auto;
-}
-
-#image-container {
- text-align: center;
- margin-top: 20px;
 }
 
 #caret-down {
- cursor: pointer;
+ font-size: var(--font-size-fp-l);
 }
 
 #caret-down:hover {
- color: var(--primary-color-fp);
+ color: var(--tertiary-color-fp);
+ cursor: pointer;
 }
 
 #menu {
  background-color: var(--background-color-1-fp);
- padding: 10px;
+ padding: var(--padding-fp-m);
  position: absolute;
  display: none;
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ right: 35px;
+ width: 180px;
 }
 
 button {
  background: none;
  border: none;
  cursor: pointer;
- font-size: 24px;
- padding: 10px;
+ font-size: var(--font-size-fp-xl);
+ padding: var(--padding-fp-m);
 }
 
-button i {
- pointer-events: none;
+button i:hover {
+ color: var(--tertiary-color-fp);
 }
 
 .products {
  display: grid;
  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
- gap: 20px;
- padding: 50px;
+ gap: var(--gap-fp-s);
+ padding: var(--padding-fp-m);
 }
 
 .product-card {
- padding: 10px;
+ padding: var(--padding-fp-xl);
+ padding-bottom: 15px;
  text-align: center;
- transition: box-shadow 0.3s ease, transform 0.3s ease;
- cursor: pointer;
 }
 
 .product-card:hover {
  box-shadow: 0 0 20px var(--background-color-2-fp);
+ transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .product-card img {
  max-width: 100%;
  height: auto;
+ padding-bottom: 15px;
 }
 
 .buy-button {
@@ -117,22 +140,34 @@ button i {
  text-align: center;
  text-decoration: none;
  display: inline-block;
- font-size: 12px;
+ font-size: var(--font-size-fp-s);
  cursor: pointer;
- transition: background-color 0.3s;
 }
 
 .buy-button:hover {
  background-color: var(--background-color-3-fp);
+ transition: 0.3s;
 }
 
 #noProductsMessage {
  display: none;
  background-color: var(--primary-color-fp);
  color: var(--secondary-color-fp);
- height: 40px;
  text-align: center;
- padding: 10px;
+ padding: var(--padding-fp-m);
+ margin-top: 20px;
+ width: 100%;
+}
+
+/* REVISAR QUE PASA CON ESTE ID */
+#suggestedProducts {
+ display: none;
+ background-color: var(--primary-color-fp);
+ color: var(--secondary-color-fp);
+ padding: var(--padding-fp-m);
+ text-align: center;
+ height: 40px;
+ margin-top: 20px;
 }
 
 nav {
@@ -142,21 +177,18 @@ nav {
 
 nav ul {
  list-style-type: none;
- padding: 0;
+ padding: var(--padding-fp-s);
  margin: 0;
  display: flex;
  justify-content: center;
- gap: 60px;
-}
-
-nav ul li {
- display: inline;
+ gap: var(--gap-fp-xxl);
 }
 
 nav ul li a {
+ display: inline;
  text-decoration: none;
  color: var(--quinary-color-fp);
- font-size: 14px;
+ font-size: var(--font-size-fp-l);
  transition: color 0.3s ease;
 }
 
@@ -165,16 +197,14 @@ nav ul li a:hover {
 }
 
 #footer-container {
- width: 100%;
  background-color: var(--background-color-3-fp);
- box-sizing: border-box;
 }
 
 #footer {
  display: flex;
  flex-direction: column;
  align-items: center;
- padding: 20px;
+ padding: var(--padding-fp-xl);
  text-align: center;
 }
 
@@ -186,20 +216,20 @@ nav ul li a:hover {
 }
 
 #footer .footer-section {
- font-size: 1em;
+ font-size: var(--font-size-fp-m);
  margin: 0 20px;
 }
 
 #footer .footer-section ul {
  list-style-type: none;
- padding: 0;
+ padding: var(--padding-fp-s);
 }
 
 #footer .footer-section ul li {
  margin-bottom: 5px;
  cursor: pointer;
  color: var(--quaternary-color-fp);
- font-size: 13px;
+ font-size: var(--font-size-fp-s);
 }
 
 #footer .social-icons {
@@ -209,7 +239,7 @@ nav ul li a:hover {
 #footer .social-icons a {
  margin: 0 10px;
  color: var(--quinary-color-fp);
- font-size: 24px;
+ font-size: var(--font-size-fp-xl);
  text-decoration: none;
 }
 
@@ -218,14 +248,13 @@ nav ul li a:hover {
 }
 
 #footer p {
- font-size: 12px;
+ font-size: var(--font-size-fp-s);
 }
 
 @media (max-width: 1024px) and (min-width: 600px) {
  #brand {
-  font-size: 24px;
   justify-content: center;
-  padding: 0;
+  padding: var(--padding-fp-l);
   cursor: pointer;
  }
 
@@ -237,10 +266,7 @@ nav ul li a:hover {
  #nav-container ul {
   background-color: var(--background-color-1-fp);
   flex-direction: column;
- }
-
- nav ul {
-  gap: 12px;
+  gap: var(--gap-fp-s);
  }
 
  #caret-down {
@@ -251,12 +277,12 @@ nav ul li a:hover {
 
  #menu {
   position: sticky;
+  margin-bottom: 20px;
  }
 
  .products {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  padding: 30px;
-  margin-top: 30px;
+  margin: 10px;
  }
 
  #footer .footer-sections {
@@ -271,29 +297,25 @@ nav ul li a:hover {
 
 @media (max-width: 600px) {
  #brand {
-  font-size: 20px;
   justify-content: center;
-  padding: 0;
+  padding: var(--padding-fp-l);
   cursor: pointer;
  }
 
  .container {
-  padding-left: 10px;
   flex-direction: column;
   align-items: center;
  }
 
  #menu {
   position: sticky;
+  margin-bottom: 20px;
  }
 
  #nav-container ul {
   background-color: var(--background-color-1-fp);
   flex-direction: column;
- }
-
- nav ul {
-  gap: 10px;
+  gap: var(--gap-fp-s);
  }
 
  #brand.active + #nav-container {
@@ -308,8 +330,7 @@ nav ul li a:hover {
 
  .products {
   grid-template-columns: 1fr;
-  padding: 20px;
-  margin-top: 60px;
+  padding: var(--padding-fp-xl);
  }
 
  #footer .footer-sections {
@@ -318,6 +339,6 @@ nav ul li a:hover {
  }
 
  #footer .footer-section {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
  }
 }

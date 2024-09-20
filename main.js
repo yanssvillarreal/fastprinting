@@ -214,6 +214,7 @@ function displayNoProductsMessage() {
  })
 
  noProductsMessage.style.display = 'block'
+ suggestedProducts.style.display = 'block'
 
  //!Evento button Shop Now en sugeridos
  document.querySelectorAll('.buy-button').forEach((button) => {
@@ -246,6 +247,8 @@ function applyFilters() {
  if (filteredProducts.length > 0) {
   displayProducts(filteredProducts)
   document.getElementById('noProductsMessage').style.display = 'none'
+  document.getElementById('suggestedProducts').style.display = 'none'
+  displayNoProductsMessage()
  } else {
   displayNoProductsMessage()
  }
@@ -268,7 +271,7 @@ generateSellerOptions()
 displayProducts(products)
 
 //!Funcion caret-down
-document.getElementById('caret-down').addEventListener('mouseover', () => {
+document.getElementById('caret-down').addEventListener('click', () => {
  const menu = document.getElementById('menu')
  menu.style.display = menu.style.display === 'block' ? 'none' : 'block'
 })
