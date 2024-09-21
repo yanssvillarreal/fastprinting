@@ -159,7 +159,6 @@ button i:hover {
  width: 100%;
 }
 
-/* REVISAR QUE PASA CON ESTE ID */
 #suggestedProducts {
  display: none;
  background-color: var(--primary-color-fp);

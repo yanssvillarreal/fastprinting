@@ -189,11 +189,11 @@ function displayProducts(productsToDisplay) {
  })
 }
 
-//!Funcion de PRODUCTS NOT FOUND y sugerencias por precio
+//!Funcion de PRODUCTS NOT FOUND
 function displayNoProductsMessage() {
  const noProductsMessage = document.getElementById('noProductsMessage')
  const suggestedProducts = document.getElementById('suggestedProducts')
- suggestedProducts.innerHTML = ''
+ noProductsMessage.style.display = 'block'
 
  //! Productos sugeridos o aleatorios
  const suggested = products.filter((product) => product.offer).slice(0, 3)
@@ -212,8 +212,6 @@ function displayNoProductsMessage() {
     `
   suggestedProducts.appendChild(productCard)
  })
-
- noProductsMessage.style.display = 'block'
  suggestedProducts.style.display = 'block'
 
  //!Evento button Shop Now en sugeridos
