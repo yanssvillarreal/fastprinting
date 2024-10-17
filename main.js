@@ -196,22 +196,11 @@ function displayNoProductsMessage() {
  noProductsMessage.style.display = 'block'
 
  //! Productos sugeridos o aleatorios
- const suggested = products.filter((product) => product.offer).slice(0, 3)
- suggested.forEach((product) => {
-  const productCard = document.createElement('div')
-  productCard.classList.add('product-card')
-  productCard.innerHTML = `
-      <img src="${product.image}" alt="${product.name}" />
-      <h3>${product.name}</h3>
-      <p>${product.description}</p>
-      <p>Seller: ${product.seller}</p>
-      <p>Quantity: ${product.quantity}</p>
-      <p>Reviews: ${product.reviews}</p>
-      <p>Price: $${product.price}</p>
-      <button class="buy-button" data-link="${product.buyLink}">Shop Now</button>
-    `
-  suggestedProducts.appendChild(productCard)
- })
+ const suggested = products
+  .sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
+  .slice(0, 3)
+
+ displayProducts(suggested)
  suggestedProducts.style.display = 'block'
 
  //!Evento button Shop Now en sugeridos
@@ -234,6 +223,7 @@ function applyFilters() {
   filteredProducts = filteredProducts.filter(
    (product) => product.seller === sellerFilter
   )
+  console.log(filteredProducts)
  }
 
  if (priceFilter) {
@@ -243,11 +233,13 @@ function applyFilters() {
  }
 
  if (filteredProducts.length > 0) {
+  // significa que tengo productos
   displayProducts(filteredProducts)
   document.getElementById('noProductsMessage').style.display = 'none'
   document.getElementById('suggestedProducts').style.display = 'none'
-  displayNoProductsMessage()
  } else {
+  // ocurre cuando NO tengo productos
+  console.log('no products found. showing suggested products')
   displayNoProductsMessage()
  }
 }
